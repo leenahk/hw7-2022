@@ -47,13 +47,21 @@ document.querySelector("#faster").addEventListener("click", function() {
 	
 });
 
+var time = video.currentTime;
 // skip ahead button
-// var time = video.currentTime(duration)
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log('skip, video = ', video)
 	duration = video.duration
 	console.log('duration', duration)
-	// console.log('time', time)
+	console.log('current time', video.currentTime)
+	
+	if(duration < time){
+		time = 0;
+	}
+	else{
+		time += 10;
+	}
+	video.currentTime = time
 });
 
 // mute and unmute video
