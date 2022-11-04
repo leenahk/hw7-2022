@@ -6,14 +6,14 @@ window.addEventListener("load", function() {
 	video.autoplay = false
 	video.loop = false
 	video.load()
-	console.log("autoplay is set to " + video.autoplay)
-	console.log("loop is set to " + video.loop)
+	console.log("Autoplay is set to " + video.autoplay)
+	console.log("Loop is set to " + video.loop)
 
 });
 
 // play button
 document.querySelector("#play").addEventListener("click", function() {
-	console.log("Play Video")
+	console.log("Play video")
 	video.play()
 	console.log(document.querySelector('#slider').value)
 	volume = document.getElementById('slider').value
@@ -23,7 +23,7 @@ document.querySelector("#play").addEventListener("click", function() {
 
 // pause button
 document.querySelector("#pause").addEventListener("click", function() {
-	console.log("Pause Video")
+	console.log("Pause video")
 	video.pause()
 
 });
@@ -31,36 +31,35 @@ document.querySelector("#pause").addEventListener("click", function() {
 var rate = 1;
 // slow down button
 document.querySelector("#slower").addEventListener("click", function() {
-	console.log("Slow Video")
+	console.log("Slow video")
 	rate -= .1
 	video.playbackRate = rate
-	console.log('rate ', rate)
+	console.log('Slow speed is ', rate)
 	
 });
 
 // speed up button
 document.querySelector("#faster").addEventListener("click", function() {
-	console.log("Speed Video")
+	console.log("Speed video")
 	rate += .1
 	video.playbackRate = rate
-	console.log('rate ', rate)
+	console.log('Fast speed is', rate)
 	
 });
 
 // skip ahead button
 document.querySelector("#skip").addEventListener("click", function() {
-	console.log('skip ahead')
+	console.log('Skip ahead')
 	duration = video.duration
-	time = video.currentTime
 	
-	if(duration <= (time+10)){
+	if(duration <= (video.currentTime+10)){
 		video.currentTime = 0
 	}
 	else{
 		video.currentTime += 10
 	}
 
-	console.log('video current time is', video.currentTime)
+	console.log('Video current location is', video.currentTime)
 });
 
 // mute and unmute video
