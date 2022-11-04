@@ -54,12 +54,12 @@ document.querySelector("#skip").addEventListener("click", function() {
 	time = video.currentTime
 	
 	if(duration <= (time+10)){
-		time = 0;
+		video.currentTime = 0
 	}
 	else{
-		time += 10;
+		video.currentTime += 10
 	}
-	video.currentTime = time
+
 	console.log('video current time is', video.currentTime)
 });
 
